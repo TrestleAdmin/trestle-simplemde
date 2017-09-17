@@ -1,11 +1,10 @@
 //= require simplemde/simplemde
 
+Trestle.SimpleMDE = {};
+
 Trestle.ready(function() {
   $('textarea.simplemde').each(function() {
-    var simplemde = new SimpleMDE({
-      element: this,
-      indentWithTabs: false,
-      autoDownloadFontAwesome: false
-    });
+    var options = $.extend({}, { element: this }, Trestle.SimpleMDE);
+    var simplemde = new SimpleMDE(options);
   });
 });

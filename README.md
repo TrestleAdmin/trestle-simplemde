@@ -23,6 +23,19 @@ Trestle.resource(:articles) do
 end
 ```
 
+SimpleMDE can be configured by defining options within `config/initializers/trestle.rb`. See https://github.com/sparksuite/simplemde-markdown-editor#configuration for the full list of configuration options. Configuration keys will be camel-cased when passed to SimpleMDE.
+
+```ruby
+Trestle.configure do |config|
+  config.simplemde.configure do |c|
+    c.toolbar = false
+
+    c.autosave.enabled = true
+    c.autosave.unique_id = "MyUniqueID"
+  end
+end
+```
+
 
 ## Rendering Content
 
