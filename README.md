@@ -1,6 +1,6 @@
 # Trestle SimpleMDE Integration (trestle-simplemde)
 
-> SimpleMDE integration plugin for the Trestle admin framework
+> [SimpleMDE](https://simplemde.com/) integration plugin for the Trestle admin framework
 
 
 ## Getting Started
@@ -21,6 +21,18 @@ Trestle.resource(:articles) do
     editor :content
   end
 end
+```
+
+
+## Rendering Content
+
+This plugin handles the back-end content editing of markdown content but does not make any decisions on how you should render the content within the front-end of your app.
+
+The example below shows how this could be done using the [`redcarpet`](https://github.com/vmg/redcarpet) gem.
+
+```erb
+<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new) %>
+<%= markdown.render(@article.content) %>
 ```
 
 
