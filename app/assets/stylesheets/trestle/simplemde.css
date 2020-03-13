@@ -1,0 +1,13 @@
+/*
+ *= require simplemde/simplemde
+ */
+
+.editor-toolbar {
+  padding: 0 4px !important;
+}
+.editor-toolbar::before {
+  margin-bottom: 2px !important;
+}
+.editor-toolbar::after {
+  margin-top: 2px !important;
+}
